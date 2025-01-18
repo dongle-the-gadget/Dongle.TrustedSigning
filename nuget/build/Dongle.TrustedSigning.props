@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+        <TrustedSigningDlibArch Condition="$(PROCESSOR_ARCHITECTURE) == 'AMD64'">x64</TrustedSigningDlibArch>
+        <TrustedSigningDlibArch Condition="$(PROCESSOR_ARCHITECTURE) == 'ARM64'">arm64</TrustedSigningDlibArch>
+        <TrustedSigningDlibArch Condition="$(TrustedSigningDlibArch) == ''">x86</TrustedSigningDlibArch>
+
+		<TrustedSigningDlibVersion>1.0.60</TrustedSigningDlibVersion>
+		<TrustedSigningDlibRootFolder>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..'))</TrustedSigningDlibRootFolder>
+		<TrustedSigningDlibBinFolder>$(TrustedSigningDlibRootFolder)\bin</TrustedSigningDlibBinFolder>
+		<TrustedSigningDlibBinArchFolder>$(TrustedSigningDlibBinFolder)\$(TrustedSigningDlibArch)</TrustedSigningDlibBinArchFolder>
+		<TrustedSigningDlibFilePath>$(TrustedSigningDlibBinArchFolder)\Dongle.TrustedSigning.dll</TrustedSigningDlibFilePath>
+	</PropertyGroup>
+</Project>

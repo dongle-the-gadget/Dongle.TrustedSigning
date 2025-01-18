@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows10.0.22621</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <NativeLib>Shared</NativeLib>
+    <PublishAot>true</PublishAot>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
+    <IlcGenerateMstatFile>true</IlcGenerateMstatFile>
+    <IlcGenerateDgmlFile>true</IlcGenerateDgmlFile>
+    <SelfContained>true</SelfContained>
+    <OptimizationPreference>Size</OptimizationPreference>
+    <DebuggerSupport>false</DebuggerSupport>
+    <Version>1.0.60</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Remove="Microsoft.Windows.SDK.NET.Ref.Windows" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.CodeSigning.Sdk" Version="0.1.127" />
+    <PackageReference Include="Azure.Identity" Version="1.13.2" />
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="9.0.1" />
+    <PackageReference Include="TerraFX.Interop.Windows" Version="10.0.26100.1" />
+  </ItemGroup>
+
+</Project>

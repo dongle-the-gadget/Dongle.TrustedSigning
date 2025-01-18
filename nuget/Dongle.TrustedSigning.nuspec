@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Dongle.TrustedSigning</id>
+        <version>1.0.60</version>
+        <description>A self-contained DLIB for Trusted Signing.</description>
+        <authors>Dongle</authors>
+        <projectUrl>https://github.com/dongle-the-gadget/Dongle.TrustedSigning</projectUrl>
+        <license type="expression">Unlicense</license>
+        <icon>images\icon.png</icon>
+        <developmentDependency>true</developmentDependency>
+        <repository type="git" url="https://github.com/dongle-the-gadget/Dongle.TrustedSigning" />
+    </metadata>
+    <files>
+        <file src="build\Dongle.TrustedSigning.props" target="build" />
+        <file src="images\icon.png" target="images" />
+        <file src="$bin_folder$" target="bin" />
+    </files>
+</package>
