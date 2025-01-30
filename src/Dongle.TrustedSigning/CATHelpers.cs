@@ -80,10 +80,10 @@ public static unsafe class CATHelpers
     {
         List<byte[]> hashes = new();
         string tempFileName;
-        using (FileStream sourceStream = new(fileHandle, FileAccess.Read))
+        FileStream sourceStream = new(fileHandle, FileAccess.Read);
+        string path = $"AXS_{Guid.NewGuid().ToString().Replace("-", "")}_{DateTime.Now.ToString("yyyyMMddHHmmss")}.cat";
+        using (FileStream destStream = new(Path.Combine(Path.GetTempPath(), path), FileMode.Create))
         {
-            string path = $"AXS_{Guid.NewGuid().ToString().Replace("-", "")}_{DateTime.Now.ToString("yyyyMMddHHmmss")}.cat";
-            using FileStream destStream = new(Path.Combine(Path.GetTempPath(), path), FileMode.Create);
             sourceStream.CopyTo(destStream);
             tempFileName = destStream.Name;
         }
@@ -92,7 +92,7 @@ public static unsafe class CATHelpers
         // but it doesn't seem to affect the behavior so I'm leaving it out for now.
 
         HANDLE hCAT;
-        fixed (char* lpTempFileName =  tempFileName)
+        fixed (char* lpTempFileName = tempFileName)
         {
             hCAT = CryptCATOpen(lpTempFileName, 0, HCRYPTPROV.NULL, 0, 0);
         }

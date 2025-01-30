@@ -114,7 +114,7 @@ public static partial class Signer
         List<byte[]> signingFileHashList = new(1);
         if (!fileHandle.IsInvalid)
         {
-            using FileStream fileStream = new(fileHandle, FileAccess.Read);
+            FileStream fileStream = new(fileHandle, FileAccess.Read);
             signingFileHashList.Add(SHA256.HashData(fileStream));
         }
         List<byte[]> signingFileAuthenticodeList = CATHelpers.GetSigningFileAuthenticodeHashList(fileHandle);
