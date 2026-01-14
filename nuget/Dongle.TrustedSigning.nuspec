@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Dongle.TrustedSigning</id>
-        <version>1.0.60</version>
+        <version>1.0.63</version>
         <description>A self-contained DLIB for Trusted Signing.</description>
         <authors>Dongle</authors>
         <projectUrl>https://github.com/dongle-the-gadget/Dongle.TrustedSigning</projectUrl>

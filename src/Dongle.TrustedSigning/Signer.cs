@@ -66,7 +66,9 @@ public static partial class Signer
                 }
                 else if (excludeCredential.Equals("SharedTokenCacheCredential", StringComparison.OrdinalIgnoreCase))
                 {
+#pragma warning disable CS0618 // Type or member is obsolete
                     defaultCredentialOptions.ExcludeSharedTokenCacheCredential = true;
+#pragma warning restore CS0618 // Type or member is obsolete
                 }
                 else if (excludeCredential.Equals("VisualStudioCredential", StringComparison.OrdinalIgnoreCase))
                 {
